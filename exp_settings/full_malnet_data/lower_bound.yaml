@@ -1,0 +1,26 @@
+# data
+root_data_path: 'DATASET/MalNet/full-data/malnet-images/'
+train_set_json: 'data_info/without_type_whole/steps_family_samples_train.json'
+test_set_json: 'data_info/without_type_whole/steps_family_samples_test.json'
+hash_type_dict: 'statistics_without_type_whole_all_families/hash_type_dict.pkl'
+batch_size: 256
+mode: 'new'  # 'new' or 'both'
+# exemplar_numper_per_class_per_step: 0
+exemplar_budget: 0
+img_norml: False
+
+# model
+res18_weights: 'imagenet'  # 'random' or 'imagenet'
+LSC: False
+
+# training
+learning_rate: 1e-4
+weight_decay: 1e-4
+num_epochs: 100
+
+# misc
+gpu_id: 2
+il_trainer: 'fine_tune'
+random_seed: 42
+exp_tag: 'lower_bound_full'
+shift_eval: False

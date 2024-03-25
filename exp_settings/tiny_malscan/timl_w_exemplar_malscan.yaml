@@ -1,0 +1,33 @@
+# data
+root_data_path: '/raid/nadia/DATASET/MalScan_MalNet'
+train_set_json: '/raid/nadia/IL4Malware/Class-IL/data_info/without_type_tiny/steps_family_samples_train.json'
+test_set_json: '/raid/nadia/IL4Malware/Class-IL/data_info/without_type_tiny/steps_family_samples_test.json'
+hash_type_dict: '/raid/nadia/IL4Malware/Class-IL/statistics_v3_without_type_tiny_all_families/hash_type_dict.pkl'
+batch_size: 64
+mode: 'new'  # 'new' or 'both'
+# exemplar_numper_per_class_per_step: 3
+exemplar_budget: 2000
+exemplar_strategy: 'random'
+img_norml: False
+malscan_vector: True
+
+# model
+timl_backbone: True
+res18_weights: 'imagenet'  # 'random' or 'imagenet'
+T: 2  # only for lwf
+lamda: 0.1 # 0.05
+LSC: False
+adaptation: True
+
+# training
+il_trainer: 'timl'
+learning_rate: 1e-4
+weight_decay: 1e-3
+num_epochs: 30
+feat_dist_loss: True
+lamda_feat_malscan: 0.1 # 0.1
+
+# misc
+gpu_id: 0
+random_seed: 42
+exp_tag: 'malscan_timl'
